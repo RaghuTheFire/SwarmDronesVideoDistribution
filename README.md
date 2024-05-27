@@ -42,4 +42,4 @@ Here's a breakdown of the code:
 - If all clients have disconnected, it closes the main socket and terminates the program.
 - Waits for all client threads to finish before exiting.
 4. The program uses OpenCV to decode and display the received video frames from clients.
-5. The `NetworkPerformanceMetrics` class (not shown in the provided code) is likely responsible for calculating and monitoring various performance metrics related to the video streaming, such as throughput, latency, and jitter. Overall, this code implements a server that can handle multiple client connections for video streaming, synchronize clocks with clients, decode and display received video frames, and monitor performance metrics for each client connection.
+5. The `NetworkPerformanceMetrics` class responsible for calculating and monitoring various performance metrics related to the video streaming, such as throughput, latency, and jitter. Overall, this code implements a server that can handle multiple client connections for video streaming, synchronize clocks with clients, decode and display received video frames, and monitor performance metrics for each client connection.
