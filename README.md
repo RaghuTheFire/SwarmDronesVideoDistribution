@@ -4,6 +4,30 @@ The server was programmed using c++ socket programming module as well as its mul
 
 ## Code Explanation
 
+
+This C++ code is designed to monitor network performance metrics such as latency, jitter, and packet loss on a socket connection. Here's a breakdown of the code: 
+1. The code includes necessary headers for input/output, vectors, chrono (for timing), math functions, and socket programming.
+2. The `serialize` and `deserialize` functions are used to convert data between vector representations and binary formats for transmission over the socket.
+3. The `Metrics` class is the main class responsible for monitoring network performance metrics. It has the following members:
+- `clientAddress`: The address of the client socket.
+- `handshake_timings`: A vector to store timing information during the handshake process.
+- `offset`: A variable to store the offset between the client and server clocks for synchronization.
+- `latency`: The current latency value.
+- `jitter`: The current jitter value.
+- `packet_indices`: A vector to store packet indices for packet loss calculation.
+- `window_size`: A constant defining the window size for packet loss calculation.
+- `error_count`: A counter for dropped packets within the current window.
+- `packet_loss`: The current packet loss percentage.
+- `log`: A vector to store the network performance metrics for each packet.
+- `server_socket`: The socket used for communication.
+4. The `sync` function is responsible for handling the handshake process between the client and server. It deserializes the received handshake message and performs the necessary steps based on the handshake stage (synch message, delay request, delay response, or termination).
+5. The `calcMetrics` function calculates the latency, jitter, and packet loss for each received packet. It performs the following tasks:
+- Calculates the latency and jitter based on the send and receive times, taking into account the clock offset.
+- Updates the packet indices and error count for packet loss calculation.
+- Calculates the packet loss percentage for the current window.
+- Logs the network performance metrics for the current packet.
+- Prints the metrics to the console. The code is designed to be used in a client-server scenario, where the client establishes a connection with the server and monitors the network performance metrics during data transmission. The handshake process is used to synchronize the clocks between the client and server, which is necessary for accurate latency and jitter calculations.
+
 ## DroneClient.cpp
 This C++ code is a client program that establishes a connection with a server and transmits video frames over a UDP socket. 
 Here's a breakdown of the code: 
