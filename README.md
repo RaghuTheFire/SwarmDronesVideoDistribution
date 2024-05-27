@@ -4,6 +4,9 @@ The server was programmed using c++ socket programming module as well as its mul
 
 ## Code Explanation
 
+## DroneClient.cpp
+
+
 ## DronesServer.cpp
 This C++ code is a server program that handles multiple client connections for video streaming and performance monitoring. 
 Here's a breakdown of the code: 
